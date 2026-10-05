@@ -1,0 +1,2507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tristan Fernandes | Sports Business</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050816;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+::selection {
+    background: #7c3aed;
+    color: white;
+}
+
+
+/* =========================================================
+   ANIMATED BACKGROUND
+========================================================= */
+
+.animated-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -10;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(37, 99, 235, 0.08),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(124, 58, 237, 0.08),
+            transparent 35%
+        ),
+        #050816;
+}
+
+
+/* MOVING RGB LIGHTS */
+
+.glow {
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: .18;
+
+    mix-blend-mode: screen;
+
+    animation: moveGlow 18s infinite alternate ease-in-out;
+}
+
+
+.glow-blue {
+    background: #2563eb;
+
+    left: -150px;
+    top: -150px;
+
+    animation-duration: 18s;
+}
+
+
+.glow-purple {
+    background: #7c3aed;
+
+    right: -180px;
+    top: 15%;
+
+    animation-duration: 23s;
+
+    animation-delay: -5s;
+}
+
+
+.glow-pink {
+    background: #ec4899;
+
+    left: 25%;
+    bottom: -300px;
+
+    animation-duration: 25s;
+
+    animation-delay: -8s;
+}
+
+
+.glow-cyan {
+    background: #00c6ff;
+
+    right: 20%;
+    bottom: -250px;
+
+    animation-duration: 20s;
+
+    animation-delay: -12s;
+}
+
+
+@keyframes moveGlow {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(1);
+    }
+
+    25% {
+        transform:
+            translate3d(120px, -80px, 0)
+            scale(1.15);
+    }
+
+    50% {
+        transform:
+            translate3d(-80px, 130px, 0)
+            scale(.9);
+    }
+
+    75% {
+        transform:
+            translate3d(180px, 100px, 0)
+            scale(1.2);
+    }
+
+    100% {
+        transform:
+            translate3d(-100px, -120px, 0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   MOVING DIGITAL GRID
+========================================================= */
+
+.grid-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 20%,
+            transparent 80%
+        );
+
+    animation: gridMove 25s linear infinite;
+}
+
+
+@keyframes gridMove {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(70px, 70px);
+    }
+}
+
+
+/* =========================================================
+   FLOATING 3D ORBS
+========================================================= */
+
+.floating-orb {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(255,255,255,.08);
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(255,255,255,.15),
+            rgba(124,58,237,.03) 45%,
+            transparent 70%
+        );
+
+    box-shadow:
+        inset 0 0 30px
+        rgba(124,58,237,.08),
+
+        0 0 40px
+        rgba(37,99,235,.06);
+
+    backdrop-filter: blur(4px);
+
+    animation:
+        orbFloat 14s infinite ease-in-out;
+}
+
+
+.orb-1 {
+
+    width: 180px;
+    height: 180px;
+
+    left: 8%;
+    top: 25%;
+
+    animation-duration: 16s;
+}
+
+
+.orb-2 {
+
+    width: 100px;
+    height: 100px;
+
+    right: 12%;
+    top: 18%;
+
+    animation-duration: 12s;
+
+    animation-delay: -4s;
+}
+
+
+.orb-3 {
+
+    width: 240px;
+    height: 240px;
+
+    right: 5%;
+    bottom: 15%;
+
+    animation-duration: 20s;
+
+    animation-delay: -8s;
+}
+
+
+.orb-4 {
+
+    width: 70px;
+    height: 70px;
+
+    left: 45%;
+    bottom: 12%;
+
+    animation-duration: 10s;
+
+    animation-delay: -3s;
+}
+
+
+@keyframes orbFloat {
+
+    0%, 100% {
+
+        transform:
+            translate3d(0,0,0)
+            rotate(0deg);
+
+    }
+
+    25% {
+
+        transform:
+            translate3d(50px,-40px,0)
+            rotate(90deg);
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(-30px,60px,0)
+            rotate(180deg);
+
+    }
+
+    75% {
+
+        transform:
+            translate3d(70px,30px,0)
+            rotate(270deg);
+
+    }
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -5;
+}
+
+
+.particle {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    opacity: .4;
+
+    box-shadow:
+        0 0 10px #00c6ff,
+        0 0 20px #7c3aed;
+
+    animation:
+        floatParticle linear infinite;
+}
+
+
+.particle:nth-child(1) {
+    left: 8%;
+    top: 20%;
+    animation-duration: 12s;
+}
+
+.particle:nth-child(2) {
+    left: 20%;
+    top: 70%;
+    animation-duration: 16s;
+}
+
+.particle:nth-child(3) {
+    left: 35%;
+    top: 30%;
+    animation-duration: 11s;
+}
+
+.particle:nth-child(4) {
+    left: 52%;
+    top: 80%;
+    animation-duration: 18s;
+}
+
+.particle:nth-child(5) {
+    left: 70%;
+    top: 20%;
+    animation-duration: 13s;
+}
+
+.particle:nth-child(6) {
+    left: 85%;
+    top: 60%;
+    animation-duration: 15s;
+}
+
+.particle:nth-child(7) {
+    left: 45%;
+    top: 50%;
+    animation-duration: 17s;
+}
+
+.particle:nth-child(8) {
+    left: 92%;
+    top: 10%;
+    animation-duration: 14s;
+}
+
+
+@keyframes floatParticle {
+
+    0% {
+        transform:
+            translateY(0)
+            translateX(0);
+
+        opacity: .2;
+    }
+
+    50% {
+        opacity: .8;
+    }
+
+    100% {
+        transform:
+            translateY(-300px)
+            translateX(100px);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(5, 8, 22, .65);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+.nav-container {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 18px 25px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+}
+
+
+.logo {
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.logo span {
+    color: #7c3aed;
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    gap: 30px;
+
+    list-style: none;
+}
+
+
+.nav-links a {
+
+    font-size: 14px;
+
+    color: #b8c0d9;
+
+    transition: .3s;
+}
+
+
+.nav-links a:hover {
+
+    color: white;
+
+    text-shadow:
+        0 0 10px #7c3aed,
+        0 0 20px #00c6ff;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    min-height: 90vh;
+
+    padding: 100px 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr .8fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+.hero-label {
+
+    color: #00c6ff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(55px, 8vw, 100px);
+
+    line-height: .95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #8b5cf6,
+            #00c6ff,
+            #ffffff
+        );
+
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation:
+        gradientText 7s linear infinite;
+}
+
+
+@keyframes gradientText {
+
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 300%;
+    }
+}
+
+
+.hero p {
+
+    color: #aab3cc;
+
+    font-size: 18px;
+
+    max-width: 650px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+.btn {
+
+    padding:
+        14px 25px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: .35s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.btn-primary {
+
+    background:
+        linear-gradient(
+            100deg,
+            #2563eb,
+            #7c3aed,
+            #ec4899
+        );
+
+    background-size: 200%;
+
+    box-shadow:
+        0 0 20px
+        rgba(124,58,237,.3);
+
+    animation:
+        buttonRGB 5s linear infinite;
+}
+
+
+@keyframes buttonRGB {
+
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+}
+
+
+.btn-primary:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 10px 40px
+        rgba(124,58,237,.5);
+}
+
+
+.btn-secondary {
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    background:
+        rgba(255,255,255,.04);
+
+    color: #d9def0;
+}
+
+
+.btn-secondary:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        #7c3aed;
+
+    box-shadow:
+        0 0 25px
+        rgba(124,58,237,.3);
+}
+
+
+/* =========================================================
+   3D PROFILE CARD
+========================================================= */
+
+.profile-wrapper {
+    perspective: 1000px;
+}
+
+
+.profile-card {
+
+    position: relative;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.35),
+
+        inset 0 1px
+        rgba(255,255,255,.1);
+
+    transform-style:
+        preserve-3d;
+
+    animation:
+        cardFloat 5s ease-in-out infinite;
+}
+
+
+.profile-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -2px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed,
+            #ec4899,
+            #00c6ff,
+            #2563eb
+        );
+
+    background-size: 300%;
+
+    z-index: -1;
+
+    filter: blur(12px);
+
+    opacity: .45;
+
+    animation:
+        borderRGB 7s linear infinite;
+}
+
+
+@keyframes borderRGB {
+
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 300%;
+    }
+}
+
+
+@keyframes cardFloat {
+
+    0%, 100% {
+
+        transform:
+            translateY(0)
+            rotateX(0deg)
+            rotateY(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-15px)
+            rotateX(2deg)
+            rotateY(-3deg);
+    }
+}
+
+
+.profile-card h3 {
+
+    font-size: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+.profile-item {
+
+    padding: 17px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+.profile-item:last-child {
+    border-bottom: none;
+}
+
+
+.profile-item small {
+
+    display: block;
+
+    color: #7f8aa8;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+.profile-item strong {
+
+    color: white;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+
+    position: relative;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+
+.section-container {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 100px 25px;
+}
+
+
+.section-heading {
+
+    margin-bottom: 50px;
+}
+
+
+.section-heading small {
+
+    color: #00c6ff;
+
+    text-transform: uppercase;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.section-heading h2 {
+
+    font-size: 42px;
+
+    margin-top: 8px;
+
+    color: white;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+}
+
+
+.about-text p {
+
+    color: #9ca8c4;
+
+    margin-bottom: 20px;
+
+    font-size: 16px;
+}
+
+
+.objective {
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,.12),
+            rgba(124,58,237,.10),
+            rgba(236,72,153,.07)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    transition: .4s;
+}
+
+
+.objective:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(37,99,235,.15);
+}
+
+
+.objective h3 {
+
+    margin-bottom: 15px;
+}
+
+
+.objective p {
+
+    color: #aab3cc;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-card {
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    transition: .4s;
+}
+
+
+.education-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(124,58,237,.5);
+
+    box-shadow:
+        0 20px 60px
+        rgba(124,58,237,.12);
+}
+
+
+.education-card h3 {
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+
+.institution {
+
+    color: #8b5cf6;
+
+    font-weight: 600;
+}
+
+
+.date {
+
+    color: #78839f;
+
+    font-size: 14px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.skill {
+
+    position: relative;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    overflow: hidden;
+
+    transition: .4s;
+}
+
+
+.skill::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+
+    height: 100px;
+
+    background: #7c3aed;
+
+    filter: blur(60px);
+
+    opacity: 0;
+
+    transition: .4s;
+}
+
+
+.skill:hover {
+
+    transform:
+        translateY(-8px)
+        rotateX(3deg);
+
+    border-color:
+        rgba(124,58,237,.5);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.3);
+}
+
+
+.skill:hover::before {
+    opacity: .5;
+}
+
+
+/* =========================================================
+   SPORTS INTERESTS
+========================================================= */
+
+.interest-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.interest {
+
+    position: relative;
+
+    min-height: 180px;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.015)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    transition:
+        transform .4s,
+        box-shadow .4s;
+}
+
+
+.interest:hover {
+
+    transform:
+        translateY(-12px)
+        rotateY(-3deg);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.35);
+}
+
+
+.interest:nth-child(1):hover {
+    border-color: #2563eb;
+}
+
+.interest:nth-child(2):hover {
+    border-color: #7c3aed;
+}
+
+.interest:nth-child(3):hover {
+    border-color: #ec4899;
+}
+
+.interest:nth-child(4):hover {
+    border-color: #00c6ff;
+}
+
+.interest:nth-child(5):hover {
+    border-color: #22c55e;
+}
+
+.interest:nth-child(6):hover {
+    border-color: #f59e0b;
+}
+
+
+.interest h3 {
+
+    margin-bottom: 12px;
+}
+
+
+.interest p {
+
+    color: #8e99b5;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   LANGUAGES
+========================================================= */
+
+.languages {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+
+.language {
+
+    padding:
+        13px 22px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    color: #c5ccdd;
+
+    transition: .3s;
+}
+
+
+.language:hover {
+
+    transform:
+        translateY(-5px);
+
+    color: white;
+
+    border-color:
+        #00c6ff;
+
+    box-shadow:
+        0 0 25px
+        rgba(0,198,255,.2);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(37,99,235,.08),
+            transparent 40%
+        ),
+
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(236,72,153,.08),
+            transparent 40%
+        );
+}
+
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+}
+
+
+.contact-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.contact-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    transition: .3s;
+}
+
+
+.contact-item:hover {
+
+    transform:
+        translateX(8px);
+
+    border-color:
+        rgba(124,58,237,.5);
+
+    box-shadow:
+        0 0 25px
+        rgba(124,58,237,.08);
+}
+
+
+.contact-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        rgba(124,58,237,.15);
+
+    font-size: 20px;
+}
+
+
+.contact-item small {
+
+    display: block;
+
+    color: #727e9b;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.contact-item strong {
+
+    font-size: 14px;
+
+    color: #e7eaf2;
+}
+
+
+.contact-message {
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,.12),
+            rgba(124,58,237,.12),
+            rgba(236,72,153,.08)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+.contact-message h3 {
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+
+.contact-message p {
+
+    color: #a4aec6;
+}
+
+
+/* =========================================================
+   MOVING MARQUEE
+========================================================= */
+
+.marquee {
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.07);
+
+    padding: 18px 0;
+
+    background:
+        rgba(255,255,255,.015);
+}
+
+
+.marquee-track {
+
+    display: inline-block;
+
+    animation:
+        marquee 22s linear infinite;
+}
+
+
+.marquee span {
+
+    margin:
+        0 35px;
+
+    color: #64708d;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+.marquee span:nth-child(2n) {
+
+    color: #7c3aed;
+}
+
+
+@keyframes marquee {
+
+    from {
+        transform:
+            translateX(0);
+    }
+
+    to {
+        transform:
+            translateX(-50%);
+    }
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        30px 25px;
+
+    text-align: center;
+
+    color: #606b85;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width: 850px) {
+
+    .nav-container {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .nav-links {
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        padding-top: 70px;
+
+        gap: 50px;
+    }
+
+
+    .hero h1 {
+
+        letter-spacing: -3px;
+    }
+
+
+    .about-grid,
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .skills-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .interest-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+}
+
+
+@media(max-width: 550px) {
+
+    .section-container {
+
+        padding:
+            70px 20px;
+    }
+
+
+    .hero {
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 55px;
+    }
+
+
+    .skills-grid,
+    .interest-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .buttons {
+
+        flex-direction: column;
+    }
+
+
+    .btn {
+
+        text-align: center;
+    }
+
+
+    .profile-card {
+
+        padding: 28px;
+    }
+
+
+    .glow {
+
+        width: 350px;
+
+        height: 350px;
+
+        filter: blur(80px);
+
+        opacity: .13;
+    }
+
+
+    .orb-1 {
+
+        width: 100px;
+
+        height: 100px;
+    }
+
+
+    .orb-2 {
+
+        width: 60px;
+
+        height: 60px;
+    }
+
+
+    .orb-3 {
+
+        width: 130px;
+
+        height: 130px;
+    }
+
+
+    .grid-overlay {
+
+        background-size:
+            50px 50px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ANIMATED BACKGROUND
+========================================================= -->
+
+<div class="animated-background">
+
+    <div class="glow glow-blue"></div>
+
+    <div class="glow glow-purple"></div>
+
+    <div class="glow glow-pink"></div>
+
+    <div class="glow glow-cyan"></div>
+
+    <div class="grid-overlay"></div>
+
+    <div class="floating-orb orb-1"></div>
+
+    <div class="floating-orb orb-2"></div>
+
+    <div class="floating-orb orb-3"></div>
+
+    <div class="floating-orb orb-4"></div>
+
+</div>
+
+
+<!-- =========================================================
+     PARTICLES
+========================================================= -->
+
+<div class="particles">
+
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+
+</div>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+
+<div class="nav-container">
+
+    <div class="logo">
+        Tristan<span>.</span>
+    </div>
+
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#about">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="#education">
+                Education
+            </a>
+        </li>
+
+        <li>
+            <a href="#skills">
+                Skills
+            </a>
+        </li>
+
+        <li>
+            <a href="#interests">
+                Interests
+            </a>
+        </li>
+
+        <li>
+            <a href="#contact">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero">
+
+
+<div>
+
+    <div class="hero-label">
+        BBA Student · Sports Business
+    </div>
+
+
+    <h1>
+        Tristan<br>
+        Fernandes
+    </h1>
+
+
+    <p>
+        Building a future in sports through business,
+        marketing, leadership and management.
+    </p>
+
+
+    <div class="buttons">
+
+        <a
+            href="#contact"
+            class="btn btn-primary"
+        >
+            Let's Connect
+        </a>
+
+
+        <a
+            href="#about"
+            class="btn btn-secondary"
+        >
+            Explore My Profile
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="profile-wrapper">
+
+<div class="profile-card">
+
+    <h3>
+        Professional Profile
+    </h3>
+
+
+    <div class="profile-item">
+
+        <small>
+            Current Position
+        </small>
+
+        <strong>
+            BBA Student
+        </strong>
+
+    </div>
+
+
+    <div class="profile-item">
+
+        <small>
+            Career Direction
+        </small>
+
+        <strong>
+            Sports Management
+        </strong>
+
+    </div>
+
+
+    <div class="profile-item">
+
+        <small>
+            Primary Interest
+        </small>
+
+        <strong>
+            Sports Marketing
+        </strong>
+
+    </div>
+
+
+    <div class="profile-item">
+
+        <small>
+            Location
+        </small>
+
+        <strong>
+            Goa, India
+        </strong>
+
+    </div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =========================================================
+     MOVING STRIP
+========================================================= -->
+
+<div class="marquee">
+
+<div class="marquee-track">
+
+    <span>
+        Sports Business
+    </span>
+
+    <span>
+        Sports Marketing
+    </span>
+
+    <span>
+        Sports Management
+    </span>
+
+    <span>
+        Leadership
+    </span>
+
+    <span>
+        Events
+    </span>
+
+    <span>
+        Branding
+    </span>
+
+    <span>
+        Sports Business
+    </span>
+
+    <span>
+        Sports Marketing
+    </span>
+
+    <span>
+        Sports Management
+    </span>
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+<div class="section-container">
+
+
+<div class="section-heading">
+
+    <small>
+        Profile
+    </small>
+
+    <h2>
+        About Me
+    </h2>
+
+</div>
+
+
+<div class="about-grid">
+
+
+<div class="about-text">
+
+    <p>
+        I am a Bachelor of Business Administration
+        student with a strong interest in the business
+        and management side of sports.
+    </p>
+
+
+    <p>
+        My interests include sports marketing,
+        event management, sponsorships, branding,
+        promotion and team management.
+    </p>
+
+
+    <p>
+        I am focused on developing practical business
+        knowledge and leadership skills that can help
+        me build a career within the sports industry.
+    </p>
+
+</div>
+
+
+<div class="objective">
+
+    <h3>
+        Career Objective
+    </h3>
+
+    <p>
+        To build a career in sports by combining
+        business education with my passion for sports.
+        My long-term goal is to work in sports management
+        with a focus on marketing, events, branding,
+        partnerships and team management.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     EDUCATION
+========================================================= -->
+
+<section id="education">
+
+<div class="section-container">
+
+
+<div class="section-heading">
+
+    <small>
+        Academic Background
+    </small>
+
+    <h2>
+        Education
+    </h2>
+
+</div>
+
+
+<div class="education-card">
+
+    <h3>
+        Bachelor of Business Administration (BBA)
+    </h3>
+
+    <div class="institution">
+        Srinivassa Sinai Dempo College (Autonomous)
+    </div>
+
+    <div class="date">
+        2026 – 2029
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section id="skills">
+
+<div class="section-container">
+
+
+<div class="section-heading">
+
+    <small>
+        Capabilities
+    </small>
+
+    <h2>
+        Core Skills
+    </h2>
+
+</div>
+
+
+<div class="skills-grid">
+
+    <div class="skill">
+        Leadership
+    </div>
+
+    <div class="skill">
+        Public Speaking
+    </div>
+
+    <div class="skill">
+        Decision Making
+    </div>
+
+    <div class="skill">
+        Quick Thinking
+    </div>
+
+    <div class="skill">
+        Fast Learning
+    </div>
+
+    <div class="skill">
+        Confidence
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SPORTS BUSINESS
+========================================================= -->
+
+<section id="interests">
+
+<div class="section-container">
+
+
+<div class="section-heading">
+
+    <small>
+        Professional Interests
+    </small>
+
+    <h2>
+        Sports Business
+    </h2>
+
+</div>
+
+
+<div class="interest-grid">
+
+
+<div class="interest">
+
+    <h3>
+        Sports Management
+    </h3>
+
+    <p>
+        Exploring strategy, operations and
+        leadership within sports organisations.
+    </p>
+
+</div>
+
+
+<div class="interest">
+
+    <h3>
+        Sports Marketing
+    </h3>
+
+    <p>
+        Interested in marketing strategies,
+        fan engagement and commercial growth.
+    </p>
+
+</div>
+
+
+<div class="interest">
+
+    <h3>
+        Sports Events
+    </h3>
+
+    <p>
+        Interested in planning, organising and
+        promoting sporting events.
+    </p>
+
+</div>
+
+
+<div class="interest">
+
+    <h3>
+        Branding & Promotion
+    </h3>
+
+    <p>
+        Interested in building sports brands
+        and engaging audiences.
+    </p>
+
+</div>
+
+
+<div class="interest">
+
+    <h3>
+        Team Management
+    </h3>
+
+    <p>
+        Interested in leadership, coordination
+        and team development.
+    </p>
+
+</div>
+
+
+<div class="interest">
+
+    <h3>
+        Sports Business
+    </h3>
+
+    <p>
+        Interested in the commercial and
+        strategic side of the sports industry.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     LANGUAGES
+========================================================= -->
+
+<section>
+
+<div class="section-container">
+
+
+<div class="section-heading">
+
+    <small>
+        Communication
+    </small>
+
+    <h2>
+        Languages
+    </h2>
+
+</div>
+
+
+<div class="languages">
+
+    <div class="language">
+        English
+    </div>
+
+    <div class="language">
+        Hindi
+    </div>
+
+    <div class="language">
+        Konkani
+    </div>
+
+    <div class="language">
+        Portuguese
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact" class="contact">
+
+<div class="section-container">
+
+
+<div class="section-heading">
+
+    <small>
+        Get In Touch
+    </small>
+
+    <h2>
+        Contact
+    </h2>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-info">
+
+
+<!-- EMAIL -->
+
+<a
+    class="contact-item"
+    href="mailto:tristanferns26@gmail.com"
+>
+
+    <div class="contact-icon">
+        ✉️
+    </div>
+
+    <div>
+
+        <small>
+            Email
+        </small>
+
+        <strong>
+            tristanferns26@gmail.com
+        </strong>
+
+    </div>
+
+</a>
+
+
+<!-- WHATSAPP -->
+
+<a
+    class="contact-item"
+    href="https://wa.me/919837345698"
+    target="_blank"
+>
+
+    <div class="contact-icon">
+        🟢
+    </div>
+
+    <div>
+
+        <small>
+            WhatsApp
+        </small>
+
+        <strong>
+            +91 9837345698
+        </strong>
+
+    </div>
+
+</a>
+
+
+<!-- INSTAGRAM -->
+
+<a
+    class="contact-item"
+    href="https://instagram.com/tristanfernssm26"
+    target="_blank"
+>
+
+    <div class="contact-icon">
+        📸
+    </div>
+
+    <div>
+
+        <small>
+            Instagram
+        </small>
+
+        <strong>
+            @tristanfernssm26
+        </strong>
+
+    </div>
+
+</a>
+
+
+<!-- LOCATION -->
+
+<div class="contact-item">
+
+    <div class="contact-icon">
+        📍
+    </div>
+
+    <div>
+
+        <small>
+            Location
+        </small>
+
+        <strong>
+            Goa, India
+        </strong>
+
+    </div>
+
+</div>
+
+
+<!-- LINKEDIN -->
+
+<a
+    class="contact-item"
+    href="https://linkedin.com/in/tristanfers26"
+    target="_blank"
+>
+
+    <div class="contact-icon">
+        💼
+    </div>
+
+    <div>
+
+        <small>
+            LinkedIn
+        </small>
+
+        <strong>
+            linkedin.com/in/tristanfers26
+        </strong>
+
+    </div>
+
+</a>
+
+
+</div>
+
+
+<div class="contact-message">
+
+    <h3>
+        Let's Build Something Great.
+    </h3>
+
+    <p>
+        I am interested in opportunities that allow
+        me to learn, contribute and develop practical
+        experience across sports management, marketing,
+        events and business.
+    </p>
+
+    <br>
+
+    <p>
+        Whether it's sports, business or a new project,
+        I'd be happy to connect.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    © 2026 Tristan Fernandes · Sports Business & Management
+
+</footer>
+
+
+</body>
+</html>
